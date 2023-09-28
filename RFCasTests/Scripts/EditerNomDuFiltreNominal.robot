@@ -44,6 +44,7 @@ Editer le nom un filtre nominal
     Verifier le nom du filtre    ${vNom_du_filtre_modifier}
     # Postcondition
     Supprimer un filtre    ${vID_du_filtre}
+    Sleep    5
 
 Verifier l'ID du filtre
     [Arguments]    ${vID_du_filtre}

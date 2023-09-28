@@ -59,8 +59,7 @@ Créer un nouveau filtre
     Click Element    ${btnEnregistrer}
     Sleep    3
 
-    #Critere de succes
-    
+    #Critere de succes    
     Verifier l'ID du filtre    ${vID_du_filtre}
     Sleep    3
     

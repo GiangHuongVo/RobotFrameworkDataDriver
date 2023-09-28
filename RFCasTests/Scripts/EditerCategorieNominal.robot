@@ -52,6 +52,7 @@ Editer une categorie nominal
 # Verifier que le nom du categorie est disponible
 Verifier le nom de categorie
     [Arguments]    ${nomCategorie} 
+    Sleep    15
     Reload Page   
     Wait Until Element Is Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}    timeout=10
     Element Should Be Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
