@@ -5,7 +5,7 @@ Library           String
 Library           Dialogs
 Library           OperatingSystem
 Library           Collections
-Library           DataDriver    ../Ressources/Datapool/datapoolv.csv
+Library           DataDriver    ../Ressources/Datapool/datapoolCreerNouveauFiltre.csv
 Resource          ../Ressources/Keywords/keywords.robot
 Suite Setup       Open browser login and preconditions pour creer nouveau filtre nominal
 Suite Teardown    Logout
@@ -63,6 +63,7 @@ Créer un nouveau filtre
     
     Verifier l'ID du filtre    ${vID_du_filtre}
     Sleep    3
+    
     #Post condition    
     Supprimer un filtre    ${vID_du_filtre}
     Sleep    3

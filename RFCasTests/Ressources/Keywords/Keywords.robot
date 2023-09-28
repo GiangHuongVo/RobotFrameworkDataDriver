@@ -16,6 +16,7 @@ ${vPassword}      12345678
 ${TIMEOUT}        5s
 
 *** Keywords ***
+######---	RQ6.BF3.1	Créer un nouveau filtre ###########
 Open browser login and preconditions pour creer nouveau filtre nominal
     Login    ${vURL}    ${vBrowser}    ${vUsername}    ${vPassword}    
     Sleep    3
@@ -29,6 +30,7 @@ Open browser login and preconditions pour editer un nom du filtre nominal
     Affichage la page Outil Admin
     Affichage la page de Gestionnaire de recherche 
 
+#########--RQ6.BF2.3  Éditer une catégorie ###########
 Open browser login and preconditions pour editer un nom du categorie nominal
     Login    ${vURL}    ${vBrowser}    ${vUsername}    ${vPassword}    
     Sleep    3
@@ -76,7 +78,7 @@ Affichage l'option de menu dans la page Outil Admin
     [Arguments]    ${option}
     Click Element    ${admin_Page_Element_P1}${option}${admin_Page_Element_P2}   
     Sleep    3
-#########--	RQ6.BF3.1	Créer un nouveau filtre ###########
+
 Affichage la page de Gestionnaire de recherche
     Affichage l'option de menu dans la page Outil Admin    Gestionnaire de recherche
     Sleep    3
