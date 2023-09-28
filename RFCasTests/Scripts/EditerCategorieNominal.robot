@@ -27,7 +27,10 @@ Test nominal editer un nom du filtre
 *** Keywords ***
 Editer une categorie nominal    
     [Arguments]    ${nomCategorie}    ${editerValue}
-    # Choisir le nom de categorie que vous voulez editer
+    # Creer un categorie
+    Creer une categories    ${nomCategorie}
+    Verifier le nom de categorie       ${nomCategorie}
+    # Test case
     Mouse Over    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
     Click Element    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
     # Choisir l'icone Editer
@@ -42,12 +45,47 @@ Editer une categorie nominal
     
     # Critere succes
     Verifier le nom de categorie    ${editerValue}
-
+    # Postcondition
+    Supprimer Une Categorie    ${editerValue}
 
 
 # Verifier que le nom du categorie est disponible
 Verifier le nom de categorie
-    [Arguments]    ${nomCategorie}    
+    [Arguments]    ${nomCategorie} 
+    Reload Page   
     Wait Until Element Is Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}    timeout=10
     Element Should Be Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
 
+Creer une categories
+    [Arguments]    ${nomCategorie}
+    Wait Until Element Is Visible    ${catagorie_racine}
+     sleep    3s
+    Mouse Down    ${catagorie_racine}
+    Wait Until Element Is Visible    ${icon_ajouter_catagories}
+    Mouse Down     ${icon_ajouter_catagories}
+    Click Element    ${icon_ajouter_catagories}
+    Sleep    5
+    # saisir le nom de catagorie a creer
+    Wait Until Element Is Visible    ${popup_Title}
+    Sleep    3
+    Input Text    ${input_Nom_Categorie}    ${nomCategorie}
+    Sleep    3
+    # click sur le button OK
+    Click Button    ${btn_CreerCatagorie_OK}
+    Sleep    5
+
+Supprimer Une Categorie
+    [Arguments]    ${nomCategorie}
+	
+    # Afficher les actions possible devant la catégorie a supprimer
+    Wait Until Element Is Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
+    Mouse Over    ${btn_SupprimerCategoriesP1}${nomCategorie}${link_categorieP2}
+	# Le sleep permet d'attendre que la croix apparaisse
+    Sleep    3
+    # Cliquer sur la croix pour supprimer
+    Wait Until Element Is Visible    ${btn_SupprimerCategoriesP1}${nomCategorie}${btn_SupprimerCategoriesP2}
+    Click Element    ${btn_SupprimerCategoriesP1}${nomCategorie}${btn_SupprimerCategoriesP2}
+    Sleep    2
+    # Confirmer la suppression
+    Wait Until Element Is Visible    ${btn_SupprimerCategorieP3}
+    Click Element    ${btn_SupprimerCategorieP3}

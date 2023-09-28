@@ -36,7 +36,7 @@ Open browser login and preconditions pour editer un nom du categorie nominal
     Sleep    3
     Affichage la page Outil Admin
     Affichage l'option de menu dans la page Outil Admin    Gestionnaire de catégories  
-
+    
 Login
     # vURL contient l'adresse URL de la page web
     # vBrowser contient l'identifiant du navigateur cible
@@ -85,3 +85,5 @@ Affichage la page de Gestionnaire de recherche
     Wait Until Element Is Visible    ${link_Ici}
     Click Element    ${link_Ici}
     Sleep    4
+
+

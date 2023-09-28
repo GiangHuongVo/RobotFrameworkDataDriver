@@ -1,4 +1,4 @@
-*** Test Cases ***;${vNom_du_filtre};${vNom_du_filtre_modifier}
-Cas1;Giang_Test 46;Giang_Test 47
-Cas2;Lyestest_1;Lyestest_2
-Cas3;test_4;test_5
+*** Test Cases ***;${vID_du_filtre};${vNom_du_filtre};${vNom_du_filtre_modifier}
+Cas1;ID1;Giang_Test_ID1;Giang_Test_Editer_1
+Cas2;ID2;Giang_Test_ID2;Giang_Test_Editer_2
+Cas3;ID3;Giang_Test_ID3;Giang_Test_Editer_3
